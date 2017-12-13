@@ -4,6 +4,7 @@ const API_KEY = '74ebd100a4486daa521c3ccc7fee0418';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';
+export const CHANGE_VIEW = 'CHANGE_VIEW';
 
 export function fetchWeather(city) {
   const url = `${ROOT_URL}&q=${city},au`;
@@ -14,5 +15,14 @@ export function fetchWeather(city) {
   return {
     type: FETCH_WEATHER,
     payload: request
+  };
+}
+
+export function toggleView(view) {
+  //console.log('Detailed view is now: ', view);
+
+  return {
+    type: CHANGE_VIEW,
+    payload: view
   };
 }

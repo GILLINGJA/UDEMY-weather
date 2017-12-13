@@ -6,9 +6,8 @@ export default function(state = [], action) {
   switch (action.type) {
     case FETCH_WEATHER:
       return [ action.payload.data, ...state ]; // ES6 syntax for concatting new city data onto existing list
-      break;
     default:
-      return [  ];
+      return [];
   }
 
   return state;

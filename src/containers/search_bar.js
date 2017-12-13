@@ -15,9 +15,8 @@ class SearchBar extends Component {
   }
 
   onInputChange(event) {
-    //console.log(event.target.value);
-
     this.setState({ term: event.target.value });
+    //console.log("After Click - State: ", this.state);
   }
 
   onFormSubmit(event) {
@@ -30,7 +29,6 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="search-group">
       <form  className="input-group" onSubmit={this.onFormSubmit} >
         <input
           placeholder="Get a five-day forecast in your favourite cities"
@@ -41,13 +39,6 @@ class SearchBar extends Component {
           <button type="submit" className="btn btn-secondary">Search</button>
         </span>
       </form>
-      <span className="input-group-btn">
-        <button type="button"
-          className="btn btn-secondary">List View</button>
-        <button type="button"
-          className="btn btn-secondary">Detailed View</button>
-      </span>
-      </div>
     );
   }
 }
